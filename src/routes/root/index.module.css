@@ -1,0 +1,8 @@
+.links {
+	display: flex;
+	gap: 1rem;
+}
+
+.links a {
+	color: #ddd;
+}
