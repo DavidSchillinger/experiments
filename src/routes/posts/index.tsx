@@ -19,15 +19,19 @@ export function Component() {
 	const deferred = useLoaderData() as { posts: Promise<Post[]> };
 
 	return (
-		<Suspense fallback={<p>Loading...</p>}>
-			<Await resolve={deferred.posts}>
-				{(posts: Post[]) => posts.map(post => (
-					<article key={post.id}>
-						<h4>{post.title}</h4>
-						<p>{post.body}</p>
-					</article>
-				))}
-			</Await>
-		</Suspense>
+		<article>
+			<h1>Posts</h1>
+
+			<Suspense fallback={<p>Loading...</p>}>
+				<Await resolve={deferred.posts}>
+					{(posts: Post[]) => posts.map(post => (
+						<article key={post.id}>
+							<h4>{post.title}</h4>
+							<p>{post.body}</p>
+						</article>
+					))}
+				</Await>
+			</Suspense>
+		</article>
 	)
 }

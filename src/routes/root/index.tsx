@@ -8,6 +8,7 @@ export function RootRoute() {
 			<nav className={classes.links}>
 				<NavLink to='/'>Home</NavLink>
 				<NavLink to='posts'>Posts</NavLink>
+				<NavLink to='users'>Users</NavLink>
 			</nav>
 
 			<Outlet/>
