@@ -1,8 +1,15 @@
-name: GitHub Actions Demo
+name: Build & Publish
+
 on:
     push:
         branches: [ 'main' ]
     workflow_dispatch:
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
 jobs:
     publish:
         runs-on: ubuntu-latest
