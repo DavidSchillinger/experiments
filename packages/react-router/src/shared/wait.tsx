@@ -1,5 +1,5 @@
 export function wait(ms: number) {
 	return new Promise(resolve => {
-		setTimeout(() => resolve(null), ms);
+		setTimeout(() => resolve(null), ms)
 	})
 }

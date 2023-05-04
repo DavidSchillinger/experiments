@@ -22,5 +22,6 @@ export const router = createBrowserRouter([
 		],
 	},
 ], {
-	basename: '/experiments',
+	// https://vitejs.dev/guide/env-and-mode.html#env-variables
+	basename: import.meta.env.BASE_URL,
 })
