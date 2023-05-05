@@ -53,6 +53,18 @@ importers:
         specifier: ^6.11.1
         version: 6.11.1(react-dom@18.2.0)(react@18.2.0)
 
+  packages/suspense:
+    dependencies:
+      modern-normalize:
+        specifier: ^1.1.0
+        version: 1.1.0
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+
 packages:
 
   /@esbuild/android-arm64@0.17.18:
