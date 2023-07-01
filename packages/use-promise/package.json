@@ -3,6 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "module": "dist/main.esm.js",
+  "types": "dist/main.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -13,11 +15,8 @@
     "test:ci": "pnpm run test --passWithNoTests",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "modern-normalize": "^1.1.0",
+  "peerDependencies": {
     "axios": "^1.4.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.1"
+    "react": "^18.2.0"
   }
 }
