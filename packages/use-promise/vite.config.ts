@@ -2,13 +2,11 @@ import {resolve} from 'node:path'
 import {defineConfig} from 'vite'
 import typescript from '@rollup/plugin-typescript'
 import baseConfig from '../../vite.base.config'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import {peerDependencies} from './package.json'
 
 export default defineConfig({
 	...baseConfig,
 	build: {
+		minify: true,
 		sourcemap: true,
 		lib: {
 			formats: ['es'],
@@ -16,7 +14,7 @@ export default defineConfig({
 			fileName: 'main.esm',
 		},
 		rollupOptions: {
-			external: Object.keys(peerDependencies ?? {}),
+			external: ['react'],
 			plugins: [typescript({noForceEmit: true})],
 		},
 	},
