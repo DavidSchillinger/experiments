@@ -6,14 +6,13 @@
   "module": "dist/main.esm.js",
   "types": "dist/main.d.ts",
   "scripts": {
-    "dev": "vite",
+    "start": "vite build --watch",
     "build": "tsc && vite build",
     "build:ci": "pnpm run build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:ci": "pnpm run lint",
     "test": "vitest",
-    "test:ci": "pnpm run test --passWithNoTests",
-    "preview": "vite preview"
+    "test:ci": "pnpm run test --passWithNoTests"
   },
   "peerDependencies": {
     "react": "^18.0.0"
