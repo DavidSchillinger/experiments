@@ -1,5 +1,5 @@
 import {useCallback, useRef, useState} from 'react'
-import {promiseFulfilled, promiseInitial, promisePending, promiseRejected, PromiseState} from './promise-state.tsx'
+import {promiseFulfilled, promiseInitial, promisePending, promiseRejected, PromiseState} from './promise-state'
 
 
 export function usePromise<Value, Args extends unknown[]>(

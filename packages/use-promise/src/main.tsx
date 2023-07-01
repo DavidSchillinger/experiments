@@ -1,2 +1,2 @@
-export * from './promise.tsx'
-export * from './promise-state.tsx'
+export * from './promise'
+export * from './promise-state'
