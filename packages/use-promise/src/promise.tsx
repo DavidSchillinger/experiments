@@ -5,7 +5,7 @@ import {promiseFulfilled, promiseInitial, promisePending, promiseRejected, Promi
 export function usePromise<Value, Args extends unknown[]>(
 	createPromise: (...args: Args) => Promise<Value>,
 	initialState: PromiseState<Value> = promiseInitial(),
-) {
+): [PromiseState<Value>, (...args: Args) => void] {
 	const promiseRef = useRef<Promise<Value>>()
 	const [state, setState] = useState<PromiseState<Value>>(initialState)
 
@@ -29,5 +29,5 @@ export function usePromise<Value, Args extends unknown[]>(
 		[createPromise],
 	)
 
-	return [state, callback] as const
+	return [state, callback]
 }
