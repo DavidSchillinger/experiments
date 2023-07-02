@@ -11,7 +11,7 @@ function removeItemAtIndex<T>(list: T[], index: number) {
 	return [...list.slice(0, index), ...list.slice(index + 1)]
 }
 
-const TodoItem = ({item}: { item: Todo }) => {
+const TodoItem = ({item}: {item: Todo}) => {
 	const [todoList, setTodoList] = useRecoilState(todoListState)
 	const index = todoList.findIndex((listItem) => listItem === item)
 

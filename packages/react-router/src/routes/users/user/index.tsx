@@ -15,7 +15,7 @@ type Album = {
 }
 
 export const loader: LoaderFunction = ({params}) => {
-	const base = 'https://jsonplaceholder.typicode.com';
+	const base = 'https://jsonplaceholder.typicode.com'
 
 	return defer({
 		user: wait(1000).then(() => fetch(`${base}/users/${params.userId}`).then(r => r.json())),
@@ -24,7 +24,7 @@ export const loader: LoaderFunction = ({params}) => {
 }
 
 export function Component() {
-	const deferred = useLoaderData() as { user: Promise<User>, albums: Promise<Album[]> };
+	const deferred = useLoaderData() as {user: Promise<User>, albums: Promise<Album[]>}
 
 	return (
 		<article>

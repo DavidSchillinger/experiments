@@ -15,7 +15,7 @@ export function loader() {
 }
 
 export function Component() {
-	const deferred = useLoaderData() as { users: Promise<User[]> };
+	const deferred = useLoaderData() as {users: Promise<User[]>}
 
 	return (
 		<article>

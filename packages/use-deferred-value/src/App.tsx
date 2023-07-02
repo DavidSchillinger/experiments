@@ -22,12 +22,12 @@ export default function App() {
 			<Defer/>
 			<Debounce/>
 		</div>
-	);
+	)
 }
 
 function Defer() {
-	const [text, setText] = useState('');
-	const deferredText = useDeferredValue(text);
+	const [text, setText] = useState('')
+	const deferredText = useDeferredValue(text)
 
 	return (
 		<div>
@@ -35,12 +35,12 @@ function Defer() {
 			<input value={text} onChange={e => setText(e.target.value)}/>
 			<SlowList text={deferredText}/>
 		</div>
-	);
+	)
 }
 
 function Debounce() {
-	const [text, setText] = useState('');
-	const [debouncedText] = useDebounce(text, 200);
+	const [text, setText] = useState('')
+	const [debouncedText] = useDebounce(text, 200)
 
 	return (
 		<div>
@@ -48,5 +48,5 @@ function Debounce() {
 			<input value={text} onChange={e => setText(e.target.value)}/>
 			<SlowList text={debouncedText}/>
 		</div>
-	);
+	)
 }

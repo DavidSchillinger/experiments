@@ -7,17 +7,17 @@ export function wait(ms: number) {
 if (import.meta.vitest) {
 	const {it, expect, vi} = import.meta.vitest
 
-	vi.useFakeTimers();
+	vi.useFakeTimers()
 
 	it('should wait', async () => {
-		const spy = vi.fn();
-		wait(200).then(spy);
-		expect(spy).not.toHaveBeenCalled();
+		const spy = vi.fn()
+		wait(200).then(spy)
+		expect(spy).not.toHaveBeenCalled()
 
-		await vi.advanceTimersByTimeAsync(100);
-		expect(spy).not.toHaveBeenCalled();
+		await vi.advanceTimersByTimeAsync(100)
+		expect(spy).not.toHaveBeenCalled()
 
-		await vi.advanceTimersByTimeAsync(100);
-		expect(spy).toHaveBeenCalledTimes(1);
-	});
+		await vi.advanceTimersByTimeAsync(100)
+		expect(spy).toHaveBeenCalledTimes(1)
+	})
 }

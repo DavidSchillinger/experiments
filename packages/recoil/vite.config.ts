@@ -1,4 +1,4 @@
-import baseConfig from '../../vite.base.config';
+import baseConfig from '../../vite.base.config'
 
 
-export default baseConfig;
+export default baseConfig

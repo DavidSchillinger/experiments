@@ -1,11 +1,11 @@
-import {QueryClient, QueryClientProvider, useQuery} from '@tanstack/react-query';
+import {QueryClient, QueryClientProvider, useQuery} from '@tanstack/react-query'
 import {Suspense} from 'react'
 import {ErrorBoundary} from 'react-error-boundary'
 
 
 const queryClient = new QueryClient({
 	defaultOptions: {queries: {suspense: true}},
-});
+})
 
 export default function App() {
 	return (
@@ -26,8 +26,8 @@ export default function App() {
 }
 
 const wait = (ms: number) => new Promise(resolve => {
-	setTimeout(resolve, ms);
-});
+	setTimeout(resolve, ms)
+})
 
 type Data = {
 	name: string,
@@ -46,7 +46,7 @@ function Success() {
 		)),
 	})
 
-	if (!data) return null;
+	if (!data) return null
 
 	return (
 		<div>
@@ -63,9 +63,9 @@ function Error() {
 	useQuery({
 		queryKey: ['errorFetch'],
 		queryFn: () => wait(1000).then(() => {
-			throw 'REJECTED';
+			throw 'REJECTED'
 		}),
 	})
 
-	return null;
+	return null
 }
