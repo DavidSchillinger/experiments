@@ -46,9 +46,14 @@ const tagStyle = (highlight: Highlight) => {
 	})
 
 	function color(): string {
-		if (!highlight) return 'rgb(85, 181, 219)'
-		if (highlight === 'blocking') return 'rgb(205, 63, 69)'
-		if (highlight === 'rendered') return 'yellow'
+		switch (highlight) {
+		case false:
+			return 'rgb(85, 181, 219)'
+		case 'blocking':
+			return 'rgb(205, 63, 69)'
+		case 'rendered':
+			return 'yellow'
+		}
 	}
 }
 
