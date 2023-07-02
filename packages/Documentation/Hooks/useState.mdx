@@ -1,0 +1,43 @@
+import {UseState} from './UseState'
+
+# [useState](https://react.dev/reference/react/useState)
+
+Store any [value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures) as [component state](https://react.dev/learn/state-a-components-memory).
+
+## Anatomy
+
+```tsx
+function Component() {
+    const [text, setText] = useState('Hello')
+    //    |state |setter            |initial value
+
+    return <Input value={text} onValueChange={setText}/>
+}
+```
+
+## Dos, don'ts and other hints
+
+✅: Do use the provided setter to update: `setState('New value!')`<br/>
+❗: Don't mutate state. `state.prop = 'Not reactive!'`<br/>
+💡: Avoiding mutation ensures React is aware of our changes and can re-render the component accordingly.<br/>
+
+✅: Do treat state from `useState` as the single source of truth for the data it holds.<br/>
+❗: Don't pass state (or props) to `useState`, this leads to state duplication.<br/>
+💡: To compute another value from state (or props), use [useMemo](/docs/documentation-hooks-usememo--docs) instead.<br/>
+
+✅: Do use the updater callback to update based on current state: `setAge(current => current + 1)`<br/>
+⚠️: Avoid using the state variable for this. [_In some cases_](https://react.dev/reference/react/useState#updating-state-based-on-the-previous-state) it will use stale data: `setAge(age + 1)`<br/>
+💡: Updating state based on the previous state can be done in two ways. Prefer the updater callback for consistency and to avoid stale data usage.<br/>
+
+## Rendering
+
+The `<UseState/>` component in these examples holds the `useState` hook.
+
+<UseState/>
+<br/>
+
+## Additional documentation
+- [React useState: API reference](https://react.dev/reference/react/useState)
+- [React useState: Troubleshooting](https://react.dev/reference/react/useState#troubleshooting)
+- [State: A Component's Memory](https://react.dev/learn/state-a-components-memory)
+- [State: Choosing the State Structure](https://react.dev/learn/choosing-the-state-structure)

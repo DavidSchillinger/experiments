@@ -1,0 +1,43 @@
+import {UseMemo} from './UseMemo'
+
+# [useMemo](https://react.dev/reference/react/useMemo)
+
+Compute any [value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures) and cache the result until dependencies [change](#ref-stability).<br/>
+
+## Anatomy
+
+```tsx
+function Component(props) {
+    const {first, last} = props
+
+    const fullName = useMemo(() => `${first} ${last}`, [first, last])
+    //    |result           |computation               |dependencies
+
+    return <span>{fullName}</span>
+}
+```
+
+## Dos, don'ts and other hints
+
+✅: Do specify all variables that this computation uses in the dependencies array. Enforced by [ESLint](https://www.npmjs.com/package/eslint-plugin-react-hooks).<br/>
+💡: This ensures that the computation always runs when dependencies change, keeping the value up-to-date.<br/>
+💡: If the computation runs "too often", this means that a dependency changes more often than it should.<br/>
+
+✅: Do prefer `useMemo` (`useMemo(() => expensive(a), [a)`) over re-computing on every render (`expensive(a)`).<br/>
+💡: Unnecessary computation can quickly lead to performance issues when a component re-renders often and computation is expensive.<br/>
+💡: New values often cause dependants to have to re-compute too. See [reference stability](#TODO).<br/>
+
+✅: Do keep the computation function [pure](https://react.dev/learn/keeping-components-pure).<br/>
+❗: Don't mutate dependencies or run side-effects (e.g. `setState`).<br/>
+⚠️: React is unaware of mutations and therefore won't always re-render correctly.<br/>
+💡: See [useEffect](#TODO) on how to run side-effects safely.<br/>
+
+## Rendering
+
+<UseMemo/>
+<br/>
+
+## Additional documentation
+- [React useMemo: API reference](https://react.dev/reference/react/useMemo)
+- [React useMemo: Troubleshooting](https://react.dev/reference/react/useMemo#troubleshooting)
+- [React: Keeping Components Pure](https://react.dev/learn/keeping-components-pure)

@@ -1,0 +1,47 @@
+# General
+
+## Casing
+
+All identifiers use `camelCase`, with the following exceptions:
+- Component names use `PascalCase`. React convention.
+- Types use `PascalCase`. TypeScript convention.
+
+## Naming
+
+- 💡: Variable names should express what data, and ideally type, the variable contains.<br/>
+- 💡: Variable names should be unambiguous, and ideally short, but prefer a clear long name over an ambiguous short name.<br/>
+e.g.: `itemList` may be unambiguous, but could be shortened to `items`.<br/>
+- ❗: Don't use abbreviations unless the abbreviation is widely understood. Including by people unfamiliar with the application domain.<br/>
+e.g.: `id`, `px`, `ms` or `props`<br/>
+- ✅: Do use plurals to identify lists (`Array`/`Map`/`Set`).<br/>
+e.g.: `items` can be assumed to be an `Item[]`, not a `number`.<br/>
+Common exceptions: `props` and `options`.<br/>
+- ✅: Do include a unit name if it's otherwise ambiguous. e.g. `delay` vs `delayMs`.<br/>
+- ✅: Do include a type name if it's otherwise ambiguous. e.g. `year` vs `yearString`.<br/>
+Booleans can often be formatted like a yes/no question. e.g. `is<something>`, `has<something>` or `should<something>`.<br/>
+Functions _do things_, try prefixing with a verb: e.g. `user()` vs `createUser()`<br/>
+Numbers often _count things_, e.g. `users` vs `userCount`.<br/>
+
+# Props
+
+## Naming
+
+- 💡: [General naming conventions](#naming) apply.<br/>
+- ✅: Do use `render<SlotName>` for render props.<br/>
+- ✅: Do use `on<EventName>` for event props.<br/>
+⚠️: Try to avoid tight coupling between components through naming.<br/>
+e.g.: `setUser={setUser}` vs `onUserEdited={setUser}`<br/>
+💡: The child component ideally doesn't care what the state manager does with the event data. See [dumb components](#TODO).
+
+# Hooks
+
+- 💡: [General naming conventions](#naming) apply.<br/>
+- ✅: Do prefix all hooks with `use`. Enforced by [ESLint](https://www.npmjs.com/package/eslint-plugin-react-hooks).
+
+# Files
+
+- ✅: Do use the name of the default exported component.<br/>
+For files that don't export components 🤷.<br/>
+Maybe just use a consistent format for all files regardless of content?<br/>
+`kebab-case` seems to be fairly common for non-component files. It would form reasonably consistent import paths because NPM packages also [commonly use](https://github.com/facebook/react/tree/main/packages) `kebab-case`<br/>
+#TODO
