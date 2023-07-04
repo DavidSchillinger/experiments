@@ -10,7 +10,7 @@ export type PromiseStatePending = {type: PromiseStateType.Pending}
 export type PromiseStateRejected = {type: PromiseStateType.Rejected, reason: unknown}
 export type PromiseStateFulfilled<Value> = {type: PromiseStateType.Fulfilled, value: Value}
 export type PromiseState<Value> =
-	PromiseStateInitial
+	| PromiseStateInitial
 	| PromiseStatePending
 	| PromiseStateRejected
 	| PromiseStateFulfilled<Value>
