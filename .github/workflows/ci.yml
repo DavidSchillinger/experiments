@@ -33,10 +33,10 @@ jobs:
         run: pnpm i
 
       - name: Lint
-        run: pnpm run -r lint:ci
+        run: pnpm lint:ci
 
       - name: Test
-        run: pnpm run -r test:ci
+        run: pnpm test:ci
 
       - name: Build
-        run: pnpm run -r build:ci
+        run: pnpm build:ci
