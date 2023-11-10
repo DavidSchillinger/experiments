@@ -1,5 +1,5 @@
 import {useRecoilValue} from 'recoil'
-import {todoListStatsState} from './state.tsx'
+import {todoListStatsState} from './state'
 
 
 const TodoListStats = () => {

@@ -1,6 +1,6 @@
 import {Await, defer, LoaderFunction, useLoaderData} from 'react-router-dom'
 import {Suspense} from 'react'
-import {wait} from '../../../shared/wait.tsx'
+import {wait} from '../../../shared/wait'
 
 
 type User = {

@@ -1,5 +1,5 @@
 import {expect, it, vi} from 'vitest'
-import {wait} from './wait.tsx'
+import {wait} from './wait'
 
 
 vi.useFakeTimers()
