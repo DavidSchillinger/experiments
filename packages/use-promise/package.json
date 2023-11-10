@@ -7,12 +7,9 @@
 	"types": "dist/main.d.ts",
 	"scripts": {
 		"start": "vite build --watch",
-		"build": "tsc && vite build",
-		"build:ci": "pnpm run build",
-		"lint": "eslint src --ext ts,tsx --max-warnings 0",
-		"lint:ci": "pnpm run lint",
-		"test": "vitest",
-		"test:ci": "pnpm run test --passWithNoTests"
+		"build:ci": "tsc && vite build",
+		"lint:ci": "eslint src --ext ts,tsx --max-warnings 0",
+		"test:ci": "vitest --passWithNoTests --run"
 	},
 	"peerDependencies": {
 		"react": "^18.0.0"

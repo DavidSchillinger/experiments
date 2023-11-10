@@ -1,8 +1,12 @@
 {
 	"$schema": "https://turbo.build/schema.json",
 	"pipeline": {
-		"build": {"outputs": ["dist"]},
-		"lint": {}
+		"build:ci": {
+			"dependsOn": ["^build:ci"],
+			"outputs": ["dist"]
+		},
+		"lint:ci": {},
+		"test:ci": {}
 	},
 	"globalDependencies": [
 		"vite.base.config.ts",

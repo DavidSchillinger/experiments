@@ -8,8 +8,10 @@
 		"pnpm": "^8"
 	},
 	"scripts": {
-		"lint": "turbo lint",
-		"build": "turbo build",
+		"test": "vitest",
+		"test:ci": "turbo test:ci",
+		"lint:ci": "turbo lint:ci",
+		"build:ci": "turbo build:ci",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build"
 	},

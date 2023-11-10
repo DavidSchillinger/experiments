@@ -5,12 +5,9 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc && vite build",
-		"build:ci": "pnpm run build",
-		"lint": "eslint src --ext ts,tsx --max-warnings 0",
-		"lint:ci": "pnpm run lint",
-		"test": "vitest",
-		"test:ci": "pnpm run test",
+		"build:ci": "tsc && vite build",
+		"lint:ci": "eslint src --ext ts,tsx --max-warnings 0",
+		"test:ci": "vitest --passWithNoTests --run",
 		"preview": "vite preview"
 	},
 	"dependencies": {

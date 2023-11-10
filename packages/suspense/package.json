@@ -5,8 +5,9 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc && vite build",
-		"lint": "eslint src --ext ts,tsx --max-warnings 0",
+		"build:ci": "tsc && vite build",
+		"lint:ci": "eslint src --ext ts,tsx --max-warnings 0",
+		"test:ci": "vitest --passWithNoTests --run",
 		"preview": "vite preview"
 	},
 	"dependencies": {
