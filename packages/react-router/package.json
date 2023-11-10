@@ -1,22 +1,22 @@
 {
-  "name": "react-router",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "build:ci": "pnpm run build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "lint:ci": "pnpm run lint",
-    "test": "vitest",
-    "test:ci": "pnpm run test",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "modern-normalize": "^2.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.14.1"
-  }
+	"name": "react-router",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"build:ci": "pnpm run build",
+		"lint": "eslint src --ext ts,tsx --max-warnings 0",
+		"lint:ci": "pnpm run lint",
+		"test": "vitest",
+		"test:ci": "pnpm run test",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"modern-normalize": "^2.0.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-router-dom": "^6.14.1"
+	}
 }

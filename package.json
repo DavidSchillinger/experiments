@@ -8,6 +8,7 @@
 		"pnpm": "^8"
 	},
 	"scripts": {
+		"lint": "turbo lint",
 		"build": "turbo build",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build"
